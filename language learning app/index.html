@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Sign In</h1>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Sign In</button>
+                <div class="links">
+                    <a href="#">Forgot password?</a>
+                    <a href="#">Don't have an account? Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="selectionPage" class="selection-container" style="display: none;">
+        <h2>Select Your Role</h2>
+        <button onclick="redirectTo('tutor.html')">Tutor</button>
+        <button onclick="redirectTo('student.html')">Student</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
