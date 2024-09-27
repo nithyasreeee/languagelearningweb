@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar for navigation -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Tutor Dashboard</h2>
+        </div>
+        <ul class="nav-list">
+            <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
+            <li><a href="#" class="nav-link" data-section="schedule">My Schedule</a></li>
+            <li><a href="#" class="nav-link" data-section="students">My Students</a></li>
+            <li><a href="#" class="nav-link" data-section="messages">Messages</a></li>
+            <li><a href="#" class="nav-link" data-section="video-call">Video Call</a></li>
+            <li><a href="#" class="nav-link" data-section="lesson-planner">Lesson Planner</a></li>
+            <li><a href="#" class="nav-link" data-section="earnings">Earnings</a></li>
+            <li><a href="#" class="nav-link" data-section="profile">Profile</a></li>
+            <li><a href="#" class="nav-link" data-section="help">Help</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+        <div class="content-section" id="home">
+            <h2>Welcome, Tutor!</h2>
+            <p>This is your dashboard. Select a section from the left menu to begin.</p>
+        </div>
+
+        <div class="content-section hidden" id="schedule">
+            <h2>My Schedule</h2>
+            <p>View and manage your upcoming lessons.</p>
+        </div>
+
+        <div class="content-section hidden" id="students">
+            <h2>My Students</h2>
+            <p>Here are your students:</p>
+        </div>
+
+        <div class="content-section hidden" id="messages">
+            <h2>Messages</h2>
+            <p>View and send messages to your students.</p>
+        </div>
+
+        <div class="content-section hidden" id="video-call">
+            <h2>Video Call</h2>
+            <p>Start or join a video call with your students.</p>
+        </div>
+
+        <div class="content-section hidden" id="lesson-planner">
+            <h2>Lesson Planner</h2>
+            <p>Create and manage your lesson plans.</p>
+        </div>
+
+        <div class="content-section hidden" id="earnings">
+            <h2>Earnings</h2>
+            <p>Track your earnings from lessons.</p>
+        </div>
+
+        <div class="content-section hidden" id="profile">
+            <h2>Your Profile</h2>
+            <p>Manage your profile details.</p>
+        </div>
+
+        <div class="content-section hidden" id="help">
+            <h2>Help & Support</h2>
+            <p>Get help and support here.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.content-section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                sections.forEach(section => section.classList.add('hidden'));
+
+                const targetSection = link.getAttribute('data-section');
+                document.getElementById(targetSection).classList.remove('hidden');
+                link.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
